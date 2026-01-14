@@ -62,12 +62,22 @@ export const grupos = [
   },
   {
     id: "grupo-5",
-    nombre: "Asesor de Economía",
+    nombre: "Experto Económico",
+    descripcion: "Agente de inteligencia artificial especializado en economía, orientado a la evaluación académica de propuestas de investigación económica",
+    webhookUrl: "https://hook.us2.make.com/zfgj3v5ifb5xpk578phggmk0z8mcbyma",
+    color: "bg-blue-600",
+    avatar: "/avatares/experto.jpg", // Asegúrate de tener esta imagen
+    creador: "Grecia",
+    linkedin: "https://www.linkedin.com/in/greciamacahuachi/"
+  },
+  {
+    id: "grupo-8",
+    nombre: "Claudia Goldin",
     descripcion: "",
-    webhookUrl: "https://hook.us2.make.com/se5dknjcmnptuv52jw9ekqgouw4yy3a5",
+    webhookUrl: "https://hook.us2.make.com/s797h3555hyo3y6t1orts63d9n0lbees",
     color: "bg-blue-600",
     avatar: "", // Asegúrate de tener esta imagen
-    creador: "Grecia",
+    creador: "Andrea Juarez",
     linkedin: "https://www.linkedin.com/in/carlosruiz"
   },
 ];
