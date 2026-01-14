@@ -3,32 +3,43 @@ import Layout from '../../layouts/Layout.astro';
 import ChatAgente from '../../components/ChatAgente.jsx';
 import { grupos } from '../../data/infoGrupos';
 
-// 1. Esta función le dice a Astro qué páginas existen basándose en nuestro archivo de datos
+// 1. Definir las rutas dinámicas basándose en los IDs de infoGrupos.js
 export function getStaticPaths() {
   return grupos.map((grupo) => ({
     params: { id: grupo.id },
-    props: { grupo }, // Pasamos todos los datos del grupo a la página
+    props: { grupo }, 
   }));
 }
 
-// 2. Recibimos los datos del grupo actual
+// 2. Recibimos los datos del grupo (agente) actual
 const { grupo } = Astro.props;
 ---
 
 <Layout title={`Chat con ${grupo.nombre}`}>
-  <main class="min-h-screen bg-slate-950 flex flex-col items-center justify-center p-4">
+  <main class="min-h-screen bg-slate-950 flex flex-col items-center p-4 md:p-10">
     
-    <div class="mb-6 text-center">
-      <h1 class="text-3xl font-bold text-white mb-2">{grupo.nombre}</h1>
-      <p class="text-gray-400">{grupo.descripcion}</p>
+    <div class="mb-8 text-center flex flex-col items-center">
+      <div class="relative">
+        <div class={`absolute inset-0 ${grupo.color} blur-2xl opacity-30 rounded-full`}></div>
+        <img 
+          src={grupo.avatar} 
+          alt={grupo.nombre} 
+          class="relative w-24 h-24 rounded-full border-4 border-slate-800 object-cover mb-4 shadow-xl"
+        />
+      </div>
+      
+      <h1 class="text-3xl font-bold text-white mb-1">{grupo.nombre}</h1>
+      <p class="text-cyan-500 font-medium text-sm uppercase tracking-widest">{grupo.descripcion}</p>
     </div>
 
-    {/* 3. Aquí usamos el componente y le inyectamos SU webhook específico */}
-    <ChatAgente 
-      client:load 
-      webhookUrl={grupo.webhookUrl} 
-      nombreAgente={grupo.nombre} 
-    />
+    <div class="w-full max-w-3xl">
+      <ChatAgente 
+        client:load 
+        webhookUrl={grupo.webhookUrl} 
+        nombreAgente={grupo.nombre}
+        avatar={grupo.avatar}
+      />
+    </div>
 
   </main>
 </Layout>
