@@ -33,10 +33,10 @@ export const grupos = [
   {
     id: "grupo-3",
     nombre: "William Sharpe",
-    descripcion: "",
+    descripcion: "Donde el riesgo se piensa y el retorno se afina",
     webhookUrl: "https://hook.us2.make.com/se5dknjcmnptuv52jw9ekqgouw4yy3a5",
     color: "bg-blue-600",
-    avatar: "/avatares/oppenheimer.webp", // Asegúrate de tener esta imagen
+    avatar: "/avatares/william_sharpe.jpeg", // Asegúrate de tener esta imagen
     creador: "Andrea",
     linkedin: "https://www.linkedin.com/in/carlosruiz"
   },
