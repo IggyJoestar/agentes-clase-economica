@@ -37,8 +37,8 @@ export const grupos = [
     webhookUrl: "https://hook.us2.make.com/se5dknjcmnptuv52jw9ekqgouw4yy3a5",
     color: "bg-blue-600",
     avatar: "/avatares/william_sharpe.jpeg", // Asegúrate de tener esta imagen
-    creador: "Andrea",
-    linkedin: "https://www.linkedin.com/in/carlosruiz"
+    creador: "Andrea Puchoc",
+    linkedin: "https://www.linkedin.com/in/andrea-puchoc-199ab529b/"
   },
   {
     id: "grupo-4",
